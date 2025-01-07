@@ -1,0 +1,4 @@
+read up on platform io
+write a program to make the arduino led blink
+compile the hex file using avr-gcc
+flash the hex file onto the arudino using avrdude
