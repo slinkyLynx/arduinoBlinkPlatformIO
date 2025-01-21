@@ -1,20 +1,17 @@
-/**
- * Copyright (C) PlatformIO <contact@platformio.org>
- * See LICENSE for details.
- */
-
 #include <avr/io.h>
 #include <util/delay.h>
 
 int main(void) {
-    // make the LED pin an output for PORTB5
-    DDRB = 1 << 5;
+    // PORTD5/7 outputs
+    DDRD = 1 << 7 | 1 << 5;
 
     while (1) {
-        _delay_ms(500);
 
-        // toggle the LED
-        PORTB ^= 1 << 5;
+        PORTD = 1 << 7;
+        _delay_ms(1000);
+
+        PORTD = 1 << 5;
+        _delay_ms(1000);
     }
 
     return 0;
